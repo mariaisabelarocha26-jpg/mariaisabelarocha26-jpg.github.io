@@ -1,192 +1,193 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Maria Isabela — Designer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maria Isabela — Portfólio</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #111;
+}
 
-    body {
-      background: #0a0a0a;
-      color: #fff;
-      overflow-x: hidden;
-      cursor: none;
-    }
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 0;
+}
 
-    /* Cursor custom */
-    .cursor {
-      width: 20px;
-      height: 20px;
-      border: 2px solid #fff;
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      transition: transform 0.1s ease;
-      z-index: 999;
-    }
+/* GRID PRINCIPAL */
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 100px;
+  align-items: center;
+}
 
-    header {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: radial-gradient(circle at center, #1a1a1a, #000);
-    }
+/* IMAGENS */
+.visual {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+}
 
-    header h1 {
-      font-size: 3rem;
-      letter-spacing: 2px;
-    }
+.visual img {
+  width: 100%;
+  display: block;
+  transition: 0.5s;
+}
 
-    header p {
-      opacity: 0.7;
-      margin-top: 10px;
-    }
+.visual:hover img {
+  transform: scale(1.05);
+}
 
-    section {
-      padding: 80px 10%;
-    }
+/* HOTSPOTS */
+.hotspot {
+  position: absolute;
+  border: 2px solid #ff69b4;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
+.hotspot:hover {
+  transform: scale(1.3);
+  background: rgba(255,105,180,0.2);
+}
 
-    .card {
-      background: #111;
-      border-radius: 20px;
-      overflow: hidden;
-      transition: 0.4s;
-      cursor: pointer;
-      position: relative;
-    }
+/* TEXTO */
+.text h2 {
+  margin-bottom: 10px;
+}
 
-    .card:hover {
-      transform: translateY(-10px) scale(1.02);
-      background: #1b1b1b;
-    }
+.text p {
+  opacity: 0.7;
+}
 
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
+/* CARD ROSA */
+.note {
+  background: #ffc0da;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
 
-    .card-content {
-      padding: 20px;
-    }
+/* LINHA CONECTORA */
+.line {
+  height: 2px;
+  background: #ccc;
+  width: 100%;
+  margin: 40px 0;
+}
 
-    .card h3 {
-      margin-bottom: 10px;
-    }
+/* HOVER GLOBAL */
+.clickable {
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    .card p {
-      font-size: 0.9rem;
-      opacity: 0.7;
-    }
+.clickable:hover {
+  transform: translateX(5px);
+}
 
-    /* animação scroll */
-    .hidden {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease;
-    }
-
-    .show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-  </style>
+</style>
 </head>
 
 <body>
 
-<div class="cursor"></div>
+<div class="container">
 
-<header>
-  <div>
-    <h1>Maria Isabela</h1>
-    <p>3D • UX/UI • Direção de Arte • Experiências Digitais</p>
+<!-- HERO -->
+<div class="section">
+  <div class="visual">
+    <img src="https://via.placeholder.com/500x400">
+
+    <!-- hotspots -->
+    <div class="hotspot" style="top:30%; left:40%" onclick="openPage('projeto.html')"></div>
+    <div class="hotspot" style="top:60%; left:70%" onclick="openPage('projeto.html')"></div>
   </div>
-</header>
 
-<section>
-  <h2>Projetos</h2>
-
-  <div class="projects">
-
-    <div class="card hidden" onclick="openLink('https://www.behance.net/gallery/186640405/Barbies-Dream-Life-AR')">
-      <img src="https://via.placeholder.com/400x300">
-      <div class="card-content">
-        <h3>Barbie’s Dream Life</h3>
-        <p>Experiência em AR + Modelagem 3D</p>
-      </div>
-    </div>
-
-    <div class="card hidden">
-      <img src="https://via.placeholder.com/400x300">
-      <div class="card-content">
-        <h3>MOH</h3>
-        <p>Design de produto + UX/UI</p>
-      </div>
-    </div>
-
-    <div class="card hidden">
-      <img src="https://via.placeholder.com/400x300">
-      <div class="card-content">
-        <h3>Rhode 3D</h3>
-        <p>Visualização e animação de produto</p>
-      </div>
-    </div>
-
-    <div class="card hidden">
-      <img src="https://via.placeholder.com/400x300">
-      <div class="card-content">
-        <h3>Sabrina Carpenter</h3>
-        <p>Cenografia 3D e direção visual</p>
-      </div>
-    </div>
-
+  <div class="text">
+    <h2>O que você faz?</h2>
+    <p>Design focado em 3D, UI/UX e experiências digitais interativas.</p>
   </div>
-</section>
+</div>
+
+<div class="line"></div>
+
+<!-- SOBRE -->
+<div class="section">
+  <div class="visual clickable" onclick="openPage('sobre.html')">
+    <img src="https://via.placeholder.com/500x300">
+  </div>
+
+  <div class="text">
+    <h2>Sobre mim / Currículo</h2>
+    <p>Cada página abre áreas do meu currículo com informações profissionais.</p>
+    <div class="note">Abre a página com meu currículo completo</div>
+  </div>
+</div>
+
+<div class="line"></div>
+
+<!-- ÁREAS -->
+<div class="section">
+  <div class="visual clickable" onclick="openPage('areas.html')">
+    <img src="https://via.placeholder.com/500x300">
+  </div>
+
+  <div class="text">
+    <h2>Áreas de atuação</h2>
+    <p>Design, Frontend, 3D, Ilustração e Motion.</p>
+    <div class="note">Cada área abre uma página específica</div>
+  </div>
+</div>
+
+<div class="line"></div>
+
+<!-- GOSTOS / ESTILO -->
+<div class="section">
+  <div class="visual clickable" onclick="openPage('estilo.html')">
+    <img src="https://via.placeholder.com/500x300">
+  </div>
+
+  <div class="text">
+    <h2>Estilo visual</h2>
+    <p>Feed com artes 3D, animações e referências visuais.</p>
+    <div class="note">Exploração estética e direção de arte</div>
+  </div>
+</div>
+
+<div class="line"></div>
+
+<!-- PORTFÓLIO -->
+<div class="section">
+  <div class="visual clickable" onclick="openPage('portfolio.pdf')">
+    <img src="https://via.placeholder.com/500x300">
+  </div>
+
+  <div class="text">
+    <h2>Portfólio completo</h2>
+    <p>Versão PDF com todos os projetos detalhados.</p>
+    <div class="note">Pode incluir brandbooks e materiais extras</div>
+  </div>
+</div>
+
+</div>
 
 <script>
-  // Cursor custom
-  const cursor = document.querySelector(".cursor");
-
-  document.addEventListener("mousemove", (e) => {
-    cursor.style.top = e.clientY + "px";
-    cursor.style.left = e.clientX + "px";
-  });
-
-  // Scroll reveal
-  const hiddenElements = document.querySelectorAll(".hidden");
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add("show");
-      }
-    });
-  });
-
-  hiddenElements.forEach(el => observer.observe(el));
-
-  // abrir link
-  function openLink(url){
-    window.open(url, "_blank");
-  }
+function openPage(url){
+  window.open(url, "_blank");
+}
 </script>
 
 </body>
