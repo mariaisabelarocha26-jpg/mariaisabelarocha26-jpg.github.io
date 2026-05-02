@@ -5,98 +5,85 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maria Isabela — Portfólio</title>
 
+<!-- SPLINE VIEWER -->
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.90/build/spline-viewer.js"></script>
+
 <style>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
-  color: #111;
+  overflow-x: hidden;
 }
 
+/* SPLINE BACKGROUND */
+spline-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* CONTEÚDO */
 .container {
   width: 90%;
   max-width: 1200px;
   margin: auto;
-  padding: 60px 0;
+  padding: 80px 0;
+  position: relative;
+  z-index: 2;
 }
 
-/* GRID PRINCIPAL */
+/* GRID */
 .section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
   align-items: center;
 }
 
-/* IMAGENS */
-.visual {
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
+/* VISUAL */
 .visual img {
   width: 100%;
-  display: block;
-  transition: 0.5s;
+  border-radius: 12px;
+  transition: 0.4s;
 }
 
 .visual:hover img {
   transform: scale(1.05);
 }
 
-/* HOTSPOTS */
-.hotspot {
-  position: absolute;
-  border: 2px solid #ff69b4;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.hotspot:hover {
-  transform: scale(1.3);
-  background: rgba(255,105,180,0.2);
-}
-
 /* TEXTO */
 .text h2 {
   margin-bottom: 10px;
+  color: #000;
 }
 
 .text p {
   opacity: 0.7;
 }
 
-/* CARD ROSA */
+/* NOTAS */
 .note {
   background: #ffc0da;
-  padding: 15px;
+  padding: 12px;
   border-radius: 10px;
-  margin-top: 15px;
+  margin-top: 10px;
   font-size: 0.9rem;
 }
 
-/* LINHA CONECTORA */
+/* LINHA */
 .line {
-  height: 2px;
-  background: #ccc;
-  width: 100%;
-  margin: 40px 0;
+  height: 1px;
+  background: rgba(0,0,0,0.2);
+  margin: 60px 0;
 }
 
-/* HOVER GLOBAL */
+/* CLICK */
 .clickable {
   cursor: pointer;
-  transition: 0.3s;
-}
-
-.clickable:hover {
-  transform: translateX(5px);
 }
 
 </style>
@@ -104,18 +91,16 @@ body {
 
 <body>
 
+<!-- FUNDO 3D -->
+<spline-viewer url="https://prod.spline.design/efjuTcomoFWDXXf2/scene.splinecode"></spline-viewer>
+
 <div class="container">
 
 <!-- HERO -->
 <div class="section">
   <div class="visual">
     <img src="https://via.placeholder.com/500x400">
-
-    <!-- hotspots -->
-    <div class="hotspot" style="top:30%; left:40%" onclick="openPage('projeto.html')"></div>
-    <div class="hotspot" style="top:60%; left:70%" onclick="openPage('projeto.html')"></div>
   </div>
-
   <div class="text">
     <h2>O que você faz?</h2>
     <p>Design focado em 3D, UI/UX e experiências digitais interativas.</p>
@@ -129,11 +114,10 @@ body {
   <div class="visual clickable" onclick="openPage('sobre.html')">
     <img src="https://via.placeholder.com/500x300">
   </div>
-
   <div class="text">
-    <h2>Sobre mim / Currículo</h2>
-    <p>Cada página abre áreas do meu currículo com informações profissionais.</p>
-    <div class="note">Abre a página com meu currículo completo</div>
+    <h2>Sobre / Currículo</h2>
+    <p>Informações profissionais e trajetória.</p>
+    <div class="note">Abre a página do currículo completo</div>
   </div>
 </div>
 
@@ -144,26 +128,24 @@ body {
   <div class="visual clickable" onclick="openPage('areas.html')">
     <img src="https://via.placeholder.com/500x300">
   </div>
-
   <div class="text">
-    <h2>Áreas de atuação</h2>
-    <p>Design, Frontend, 3D, Ilustração e Motion.</p>
+    <h2>Áreas</h2>
+    <p>Design, 3D, Frontend, Ilustração e Motion.</p>
     <div class="note">Cada área abre uma página específica</div>
   </div>
 </div>
 
 <div class="line"></div>
 
-<!-- GOSTOS / ESTILO -->
+<!-- ESTILO -->
 <div class="section">
   <div class="visual clickable" onclick="openPage('estilo.html')">
     <img src="https://via.placeholder.com/500x300">
   </div>
-
   <div class="text">
     <h2>Estilo visual</h2>
-    <p>Feed com artes 3D, animações e referências visuais.</p>
-    <div class="note">Exploração estética e direção de arte</div>
+    <p>Exploração estética com 3D, animações e direção de arte.</p>
+    <div class="note">Feed experimental com seus trabalhos</div>
   </div>
 </div>
 
@@ -174,11 +156,10 @@ body {
   <div class="visual clickable" onclick="openPage('portfolio.pdf')">
     <img src="https://via.placeholder.com/500x300">
   </div>
-
   <div class="text">
     <h2>Portfólio completo</h2>
-    <p>Versão PDF com todos os projetos detalhados.</p>
-    <div class="note">Pode incluir brandbooks e materiais extras</div>
+    <p>Versão completa com todos os projetos.</p>
+    <div class="note">Inclui brandbooks e materiais extras</div>
   </div>
 </div>
 
